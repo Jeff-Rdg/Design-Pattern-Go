@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"patterns/FactoryMethod/entity/enums"
-	"patterns/FactoryMethod/entity/factory"
+	"patterns/FactoryMethod/enums"
+	"patterns/FactoryMethod/factory"
 	"patterns/FactoryMethod/requests"
 )
 

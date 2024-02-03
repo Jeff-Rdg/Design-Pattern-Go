@@ -2,9 +2,9 @@ package factory
 
 import (
 	"errors"
-	"patterns/FactoryMethod/entity/enums"
-	"patterns/FactoryMethod/entity/interfaces"
 	"patterns/FactoryMethod/entity/transfer"
+	"patterns/FactoryMethod/enums"
+	"patterns/FactoryMethod/interfaces"
 	"patterns/FactoryMethod/requests"
 )
 

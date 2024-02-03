@@ -1,6 +1,8 @@
 package requests
 
-import "patterns/FactoryMethod/entity/enums"
+import (
+	"patterns/FactoryMethod/enums"
+)
 
 type Input struct {
 	Value             float64            `json:"value"`
