@@ -1,7 +1,7 @@
 package requests
 
 import (
-	"patterns/1.FactoryMethod/enums"
+	"patterns/1_FactoryMethod/enums"
 )
 
 type Input struct {

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"patterns/1.FactoryMethod/enums"
-	"patterns/1.FactoryMethod/factory"
-	"patterns/1.FactoryMethod/requests"
+	"patterns/1_FactoryMethod/enums"
+	"patterns/1_FactoryMethod/factory"
+	"patterns/1_FactoryMethod/requests"
 )
 
 func main() {

@@ -2,13 +2,13 @@ package transfer
 
 import (
 	"fmt"
-	"patterns/1.FactoryMethod/enums"
-	"patterns/1.FactoryMethod/interfaces"
-	"patterns/1.FactoryMethod/requests"
+	"patterns/1_FactoryMethod/enums"
+	"patterns/1_FactoryMethod/interfaces"
+	"patterns/1_FactoryMethod/requests"
 	"time"
 )
 
-type Pix struct {
+type Ted struct {
 	ID                uint               `json:"id"`
 	CreatedAt         time.Time          `json:"created_at"`
 	UpdatedAt         time.Time          `json:"updated_at"`
@@ -18,8 +18,8 @@ type Pix struct {
 	Type              enums.TransferType `json:"type"`
 }
 
-func NewPix(input requests.Input) interfaces.Transfer {
-	return &Pix{
+func NewTed(input requests.Input) interfaces.Transfer {
+	return &Ted{
 		ID:                interfaces.Increment(),
 		CreatedAt:         time.Now(),
 		UpdatedAt:         time.Now(),
@@ -30,15 +30,15 @@ func NewPix(input requests.Input) interfaces.Transfer {
 	}
 }
 
-func (p *Pix) Processing() string {
-	return "Processando transação Pix..."
+func (p *Ted) Processing() string {
+	return "Processando transação Ted..."
 }
 
-func (p *Pix) Send() string {
-	return fmt.Sprintf("Transação Pix realizada com sucesso:\nvalor: %v\nRecebedor: %s\n", p.Value, p.TaxNumberReceiver)
+func (p *Ted) Send() string {
+	return fmt.Sprintf("Transação Ted realizada com sucesso:\nvalor: %v\nRecebedor: %s\n", p.Value, p.TaxNumberReceiver)
 }
 
-func (p *Pix) Flow() {
+func (p *Ted) Flow() {
 	fmt.Println(p.Processing())
 	time.Sleep(time.Second * 3)
 	fmt.Println(p.Send())
