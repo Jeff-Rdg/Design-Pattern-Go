@@ -7,6 +7,6 @@ Este repositório oferece exemplos práticos de implementação de Design Patter
 ## Estrutura do Repositório
 ### Padrões de Criação
 1. Factory Method
-  - Diretório: [Factory Method](./)
+  - Diretório: [Factory Method](./1_FactoryMethod/README.md)
   - Implementação do Factory Method no contexto de transações.
   - [Leia mais](https://refactoring.guru/pt-br/design-patterns/factory-method) sobre a implementação do Factory Method.
