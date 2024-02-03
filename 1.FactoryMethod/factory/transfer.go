@@ -2,10 +2,10 @@ package factory
 
 import (
 	"errors"
-	"patterns/FactoryMethod/entity/transfer"
-	"patterns/FactoryMethod/enums"
-	"patterns/FactoryMethod/interfaces"
-	"patterns/FactoryMethod/requests"
+	"patterns/1.FactoryMethod/entity/transfer"
+	"patterns/1.FactoryMethod/enums"
+	"patterns/1.FactoryMethod/interfaces"
+	"patterns/1.FactoryMethod/requests"
 )
 
 func NewTransfer(input requests.Input) (interfaces.Transfer, error) {

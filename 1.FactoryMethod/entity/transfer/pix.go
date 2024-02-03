@@ -2,9 +2,9 @@ package transfer
 
 import (
 	"fmt"
-	"patterns/FactoryMethod/enums"
-	"patterns/FactoryMethod/interfaces"
-	"patterns/FactoryMethod/requests"
+	"patterns/1.FactoryMethod/enums"
+	"patterns/1.FactoryMethod/interfaces"
+	"patterns/1.FactoryMethod/requests"
 	"time"
 )
 
