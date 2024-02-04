@@ -9,37 +9,43 @@ import (
 )
 
 type Ted struct {
-	ID                uint               `json:"id"`
-	CreatedAt         time.Time          `json:"created_at"`
-	UpdatedAt         time.Time          `json:"updated_at"`
-	Value             float64            `json:"value"`
-	TaxNumberSender   string             `json:"tax_number_sender"`
-	TaxNumberReceiver string             `json:"tax_number_receiver"`
-	Type              enums.TransferType `json:"type"`
+	ID              uint                 `json:"id"`
+	CreatedAt       time.Time            `json:"created_at"`
+	UpdatedAt       time.Time            `json:"updated_at"`
+	Value           float64              `json:"value"`
+	AccountSender   string               `json:"account_sender"`
+	AccountReceiver string               `json:"account_receiver"`
+	Type            enums.TransferType   `json:"type"`
+	Status          enums.TransferStatus `json:"status"`
 }
 
-func NewTed(input requests.Input) interfaces.Transfer {
+func NewTed(input requests.TransferInput) interfaces.Transfer {
 	return &Ted{
-		ID:                interfaces.Increment(),
-		CreatedAt:         time.Now(),
-		UpdatedAt:         time.Now(),
-		Value:             input.Value,
-		TaxNumberSender:   input.TaxNumberSender,
-		TaxNumberReceiver: input.TaxNumberReceiver,
-		Type:              input.Type,
+		ID:              interfaces.Increment(),
+		CreatedAt:       time.Now(),
+		UpdatedAt:       time.Now(),
+		Value:           input.Value,
+		AccountSender:   input.AccountSender,
+		AccountReceiver: input.AccountReceiver,
+		Type:            input.Type,
+		Status:          enums.CREATED,
 	}
 }
 
-func (p *Ted) Processing() string {
-	return "Processando transação Ted..."
+func (p *Ted) Create() {
+	fmt.Printf("Transação Ted criada!\n %s", p.ToString())
+	time.Sleep(time.Second * 2)
+	p.Status = enums.PROCESSING
+	fmt.Printf("Processando...\n %s", p.ToString())
+	time.Sleep(time.Second * 2)
+	p.Status = enums.ANALYSIS
+	fmt.Printf("Status da transação: %s", p.ToString())
 }
 
-func (p *Ted) Send() string {
-	return fmt.Sprintf("Transação Ted realizada com sucesso:\nvalor: %v\nRecebedor: %s\n", p.Value, p.TaxNumberReceiver)
-}
-
-func (p *Ted) Flow() {
-	fmt.Println(p.Processing())
-	time.Sleep(time.Second * 3)
-	fmt.Println(p.Send())
+func (p *Ted) ToString() string {
+	return fmt.Sprintf(
+		"Valor: %v\n"+
+			"Status: %s\n"+
+			"Conta pagadora: %s\n"+
+			"Conta recebedora: %s\n\n", p.Value, p.Status, p.AccountSender, p.AccountReceiver)
 }

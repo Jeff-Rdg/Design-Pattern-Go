@@ -1,12 +1,14 @@
 package requests
 
 import (
+	"github.com/google/uuid"
 	"patterns/1_FactoryMethod/enums"
 )
 
-type Input struct {
-	Value             float64            `json:"value"`
-	TaxNumberSender   string             `json:"tax_number_sender"`
-	TaxNumberReceiver string             `json:"tax_number_receiver"`
-	Type              enums.TransferType `json:"type"`
+type TransferInput struct {
+	Value           float64            `json:"value"`
+	AccountSender   string             `json:"account_sender"`
+	AccountReceiver string             `json:"account_receiver"`
+	Type            enums.TransferType `json:"type"`
+	PixKey          uuid.UUID          `json:"pix_key"`
 }

@@ -8,7 +8,7 @@ import (
 	"patterns/1_FactoryMethod/requests"
 )
 
-func NewTransfer(input requests.Input) (interfaces.Transfer, error) {
+func NewTransfer(input requests.TransferInput) (interfaces.Transfer, error) {
 	switch input.Type {
 	case enums.PIX:
 		return transfer.NewPix(input), nil

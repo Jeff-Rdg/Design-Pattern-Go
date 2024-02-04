@@ -1,9 +1,7 @@
 package interfaces
 
 type Transfer interface {
-	Send() string
-	Processing() string
-	Flow()
+	Create()
 }
 
 var NewID uint
